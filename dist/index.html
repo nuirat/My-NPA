@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+</head>
+<body>
+    
+    <input type="text" id="team" placeholder="What's your team?">
+    <button onclick=fetchPrice()>Get Roster</button>
+    <div class="main"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+    <script src="./jquery/dist/jquery.js"></script> 
+    <script id="first" type="text/x-handlebars-template">   
+         
+            {{#each userInfo}} 
+           <div class="player">
+            <h2 class="player">{{firstName}} {{lastName}}</h2>
+            <p>{{jersey}}</p>
+             <img src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}"> 
+             <div>{{pos}}</div>
+
+           </div>
+
+           {{/each}}
+        
+    </script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
